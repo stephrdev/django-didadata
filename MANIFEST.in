@@ -1,0 +1,7 @@
+include README.rst
+include CHANGELOG.rst
+include LICENSE.rst
+include setup.cfg
+
+recursive-include didadata *.py
+recursive-exclude didadata/tests *
