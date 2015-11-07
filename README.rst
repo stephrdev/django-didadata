@@ -7,8 +7,8 @@ django-didadata
 .. image:: https://travis-ci.org/stephrdev/django-didadata.svg?branch=master
     :target: https://travis-ci.org/stephrdev/django-didadata
 
-.. image:: https://coveralls.io/repos/stephrdev/django-didadata/badge.svg
-    :target: https://coveralls.io/r/stephrdev/django-didadata
+.. image:: https://coveralls.io/repos/stephrdev/django-didadata/badge.svg?branch=master
+  :target: https://coveralls.io/github/stephrdev/django-didadata?branch=master
 
 
 What is django-didadata
