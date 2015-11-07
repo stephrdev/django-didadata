@@ -2,4 +2,5 @@
 branch = True
 omit =
 	*/__init__.py
+	didadata/migrations/*
 	didadata/tests/*
