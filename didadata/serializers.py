@@ -4,7 +4,6 @@ from .models import Metric, Record
 
 
 class MetricSerializer(serializers.ModelSerializer):
-    record_set = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Metric
