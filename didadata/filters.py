@@ -1,5 +1,5 @@
 import django_filters
-from django_filters.fields import RangeField, IsoDateTimeField
+from django_filters.fields import IsoDateTimeField, RangeField
 
 from .models import Record
 
