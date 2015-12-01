@@ -9,7 +9,16 @@ class MetricSerializer(serializers.ModelSerializer):
         model = Metric
 
 
+class MinimalRecordSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Record
+        fields = ('timestamp', 'value')
+
+
 class RecordSerializer(serializers.ModelSerializer):
+    metric = serializers.SlugRelatedField(
+        queryset=Metric.objects.all(), slug_field='name')
 
     class Meta:
         model = Record

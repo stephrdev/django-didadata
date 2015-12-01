@@ -42,6 +42,7 @@ setup(
     install_requires=[
         'Django>=1.8,<1.10',
         'djangorestframework>=3.3,<3.4',
+        'django-filter>=0.11,<0.12',
     ],
     extras_require={
         'tests': tests_require,

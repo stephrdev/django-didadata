@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Metric(models.Model):
-    name = models.CharField(_('Metric name'), max_length=40, unique=True)
+    name = models.SlugField(_('Metric name'), max_length=40, unique=True)
 
     class Meta:
         verbose_name = _('Metric')

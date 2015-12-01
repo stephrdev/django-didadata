@@ -1,7 +1,8 @@
-from rest_framework import exceptions, mixins, permissions, viewsets
+from rest_framework import filters, mixins, permissions, viewsets
 
+from .filters import RecordFilter
 from .models import Metric, Record
-from .serializers import MetricSerializer, RecordSerializer
+from .serializers import MetricSerializer, MinimalRecordSerializer, RecordSerializer
 
 
 # We dont use the ModelViewSet because we don't want to allow delete or update.
@@ -22,21 +23,14 @@ class RecordViewSet(
     viewsets.GenericViewSet
 ):
     queryset = Record.objects.all()
-    serializer_class = RecordSerializer
     permission_classes = (permissions.DjangoModelPermissions,)
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = RecordFilter
 
-    def get_queryset(self):
-        """
-        Restrict listing of records to a specific metric.
-        """
-        if 'metric' not in self.request.query_params:
-            raise exceptions.ValidationError(
-                {'metric': 'Please provide a metric ID to retreive records.'})
+    def get_serializer_class(self):
+        # Use reduced serializer (no metric name per record) if we filter based
+        # on a metric.
+        if 'metric' in self.request.query_params:
+            return MinimalRecordSerializer
 
-        try:
-            metric_id = int(self.request.query_params['metric'])
-        except ValueError:
-            raise exceptions.ValidationError(
-                {'metric': 'Provided value is not a valid metric ID.'})
-
-        return super().get_queryset().filter(metric_id=metric_id)
+        return RecordSerializer
