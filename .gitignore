@@ -1,5 +1,8 @@
+*.egg-info/
 *.egg
 .tox
 coverage.xml
 .coverage
 .cache
+*.pyc
+*__pycache__*
