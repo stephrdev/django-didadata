@@ -30,7 +30,7 @@ class RecordViewSet(
     def get_serializer_class(self):
         # Use reduced serializer (no metric name per record) if we filter based
         # on a metric.
-        if 'metric' in self.request.query_params:
+        if 'minimal' in self.request.query_params:
             return MinimalRecordSerializer
 
         return RecordSerializer

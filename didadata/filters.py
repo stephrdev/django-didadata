@@ -1,3 +1,6 @@
+from django import forms
+from django.db.models import Q
+
 import django_filters
 from django_filters.fields import IsoDateTimeField, RangeField
 
@@ -22,8 +25,24 @@ class IsoDateTimeRangeFilter(django_filters.RangeFilter):
     field_class = IsoDateTimeRangeField
 
 
+class MultipleCharFilter(django_filters.CharFilter):
+    field_class = forms.CharField
+
+    def filter(self, qs, value):
+        value = value or ''
+
+        if not value:
+            return qs
+
+        q = Q()
+        for v in set(value.split(',')):
+            q |= Q(**{self.name: v})
+
+        return self.get_method(qs)(q)
+
+
 class RecordFilter(django_filters.FilterSet):
-    metric = django_filters.CharFilter(name='metric__name')
+    metric = MultipleCharFilter(name='metric__name')
     timestamp = IsoDateTimeRangeFilter()
 
     class Meta:
