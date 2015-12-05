@@ -1,6 +1,7 @@
-import django_filters
 from django import forms
 from django.db.models import Q
+
+import django_filters
 from django_filters.fields import IsoDateTimeField, RangeField
 
 from .models import Record
