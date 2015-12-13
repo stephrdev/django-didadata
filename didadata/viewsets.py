@@ -27,6 +27,16 @@ class RecordViewSet(
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = RecordFilter
 
+    def get_queryset(self):
+        qset = super().get_queryset()
+
+        if 'minimal' in self.request.query_params:
+            # Minimal response doesn't include metric name, no select_related
+            # needed.
+            return qset
+
+        return qset.select_related('metric')
+
     def get_serializer_class(self):
         # Use reduced serializer (no metric name per record) if we filter based
         # on a metric.
