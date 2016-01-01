@@ -4,4 +4,6 @@ include LICENSE.rst
 include setup.cfg
 
 recursive-include didadata *.py
+recursive-include didadata/locale *
 recursive-exclude didadata/tests *
+recursive-exclude build/ *
