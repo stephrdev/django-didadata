@@ -1,7 +1,7 @@
 .PHONY: tests coverage coverage-html clean
 APP=.
 COV=didadata
-OPTS=-vs
+OPTS=-v
 
 help:
 	@echo "tests - run tests"
