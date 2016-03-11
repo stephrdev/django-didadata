@@ -7,3 +7,5 @@ recursive-include didadata *.py
 recursive-include didadata/locale *
 recursive-exclude didadata/tests *
 recursive-exclude build/ *
+recursive-exclude examples/ *
+recursive-exclude examples/example *
