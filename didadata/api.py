@@ -2,7 +2,7 @@ from .exceptions import InvalidValueException, MetricNotFoundException
 from .models import Metric
 
 
-def record(name, value):
+def record(name, value, timestamp=None):
     """
     This api method expects a name of an existing metric and a float convertable value.
     The value is stored and a new record object is returned.
@@ -17,4 +17,8 @@ def record(name, value):
     except ValueError:
         raise InvalidValueException(str(value))
 
-    return metric.record_set.create(value=value)
+    kwargs = dict(value=value)
+    if timestamp:
+        kwargs.update({'timestamp': timestamp})
+
+    return metric.record_set.create(**kwargs)
