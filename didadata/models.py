@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
@@ -15,7 +16,8 @@ class Metric(models.Model):
 
 class Record(models.Model):
     metric = models.ForeignKey(Metric, verbose_name=_('Metric'))
-    timestamp = models.DateTimeField(_('Timestamp'), db_index=True, auto_now_add=True)
+    timestamp = models.DateTimeField(
+        _('Timestamp'), db_index=True, default=timezone.now, editable=False)
     value = models.FloatField(_('Value'))
 
     class Meta:
