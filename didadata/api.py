@@ -17,8 +17,8 @@ def record(name, value, timestamp=None):
     except ValueError:
         raise InvalidValueException(str(value))
 
-    kwargs = dict(value=value)
+    kwargs = {'value': value}
     if timestamp:
-        kwargs.update({'timestamp': timestamp})
+        kwargs['timestamp'] = timestamp
 
     return metric.record_set.create(**kwargs)

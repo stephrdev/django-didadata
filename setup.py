@@ -4,7 +4,7 @@ import sys
 from setuptools import find_packages, setup
 
 
-version = '0.1.1'
+version = '0.2.0'
 
 
 if sys.argv[-1] == 'publish':
@@ -52,7 +52,6 @@ setup(
     packages=find_packages(exclude=[
         'didadata.tests',
         'didadata.tests.factories',
-        'examples',
         'htmlcov',
         'build',
     ]),

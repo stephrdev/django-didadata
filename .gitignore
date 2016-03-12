@@ -8,4 +8,3 @@ coverage.xml
 .cache
 *.pyc
 *__pycache__*
-examples/

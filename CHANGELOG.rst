@@ -1,11 +1,11 @@
 Changelog
 =========
 
-0.1.1 - 2016-03-12
+0.2.0 - 2016-03-12
 ------------------
 
-* removed auto_now_add from record timestamp and set a default value to timezone.now
-* extend api record method with timestamp to set a datetime manually
+* Replaced auto_now_add in Record.timestamp with default value to allow manual timestamps
+* Extended record api with optional timestamp value
 
 
 0.1.0 - 2016-02-12
