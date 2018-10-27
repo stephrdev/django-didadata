@@ -4,7 +4,10 @@ Changelog
 0.3.0 - 2018-10-27
 ------------------
 
+* Add support for Django 1.10.x
 * Add support for Django 1.11.x
+* Add support for Django 2.0.x
+* Add support for Django 2.1.x
 
 
 0.2.0 - 2016-03-12
