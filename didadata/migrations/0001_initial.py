@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('timestamp', models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Timestamp')),
                 ('value', models.FloatField(verbose_name='Value')),
-                ('metric', models.ForeignKey(verbose_name='Metric', to='didadata.Metric')),
+                ('metric', models.ForeignKey(verbose_name='Metric', to='didadata.Metric', on_delete=models.deletion.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'Records',
