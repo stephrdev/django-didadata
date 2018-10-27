@@ -58,9 +58,9 @@ setup(
     test_suite='.',
     tests_require=tests_require,
     install_requires=[
-        'Django>=1.8,<1.10',
-        'djangorestframework>=3.3,<3.4',
-        'django-filter>=0.11,<0.12',
+        'Django>=1.8.19,<2.0',
+        'djangorestframework>=3.9.0,<3.10',
+        'django-filter>=2.0.0,<2.1',
     ],
     extras_require={
         'docs': docs_requires,
