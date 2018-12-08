@@ -35,13 +35,13 @@ class MultipleCharFilter(django_filters.CharFilter):
 
         q = Q()
         for v in set(value.split(',')):
-            q |= Q(**{self.name: v})
+            q |= Q(**{self.field_name: v})
 
         return self.get_method(qs)(q)
 
 
 class RecordFilter(django_filters.FilterSet):
-    metric = MultipleCharFilter(name='metric__name')
+    metric = MultipleCharFilter(field_name='metric__name')
     timestamp = IsoDateTimeRangeFilter()
 
     class Meta:
