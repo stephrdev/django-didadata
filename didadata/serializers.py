@@ -7,6 +7,7 @@ class MetricSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Metric
+        fields = '__all__'
 
 
 class MinimalRecordSerializer(serializers.ModelSerializer):
