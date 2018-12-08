@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.3.1 - 2018-12-08
+------------------
+
+* Fix: import DjangoFilterBackend from django-filters `see django-rest-framework  <https://www.django-rest-framework.org/community/3.5-announcement/#djangofilterbackend>`_
+
+
 0.3.0 - 2018-10-27
 ------------------
 
