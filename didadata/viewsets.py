@@ -1,4 +1,5 @@
-from rest_framework import filters, mixins, permissions, viewsets
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import mixins, permissions, viewsets
 
 from .filters import RecordFilter
 from .models import Metric, Record
@@ -24,7 +25,7 @@ class RecordViewSet(
 ):
     queryset = Record.objects.all()
     permission_classes = (permissions.DjangoModelPermissions,)
-    filter_backends = (filters.DjangoFilterBackend,)
+    filter_backends = (DjangoFilterBackend,)
     filter_class = RecordFilter
 
     def get_queryset(self):
