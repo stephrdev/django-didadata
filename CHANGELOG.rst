@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 * Fix: import DjangoFilterBackend from django-filters `see django-rest-framework  <https://www.django-rest-framework.org/community/3.5-announcement/#djangofilterbackend>`_
+* Swapped test environment to pipenv
 
 
 0.3.0 - 2018-10-27
