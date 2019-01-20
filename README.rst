@@ -16,3 +16,21 @@ What is django-didadata
 
 `didadata` is a Django app to collect numeric data.
 The app will provide graphs and notifications for collected metrics.
+
+
+Prepare for development
+-----------------------
+
+A Python 3.6 interpreter is required in addition to pipenv.
+
+.. code-block:: shell
+
+    $ pipenv install --python 3.6 --dev
+    $ pipenv install -e .
+
+
+Now you're ready to run the tests:
+
+.. code-block:: shell
+
+    $ pipenv run py.test

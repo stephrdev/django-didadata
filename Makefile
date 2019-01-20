@@ -1,29 +1,20 @@
-.PHONY: tests coverage coverage-html clean
-APP=.
-COV=didadata
-OPTS=-v
+.PHONY: clean tests cov release
 
-help:
-	@echo "tests - run tests"
-	@echo "coverage - run tests with coverage enabled"
-	@echo "coverage-html - run tests with coverage html export enabled"
-	@echo "clean - Clean build related files"
-
-
-tests:
-	py.test ${OPTS} ${APP}
-
-
-coverage:
-	py.test ${OPTS} --cov=$(COV) --cov-report=term-missing $(APP)
-
-
-coverage-html:
-	py.test ${OPTS} --cov=$(COV) --cov-report=term-missing --cov-report=html $(APP)
-
+VERSION = $(shell pipenv run python -c "print(__import__('didadata').__version__)")
 
 clean:
-	rm -fr build/ src/build
-	rm -fr dist/ src/dist
-	rm -fr *.egg-info src/*.egg-info
-	rm -fr htmlcov/
+	rm -fr docs/_build build/ dist/
+
+tests:
+	pipenv run py.test --cov
+
+cov: tests
+	pipenv run coverage html
+	@echo open htmlcov/index.html
+
+release:
+	@echo About to release ${VERSION}
+	@echo [ENTER] to continue; read
+	pipenv run python setup.py sdist bdist_wheel
+	pipenv run twine upload dist/*
+	git tag -a "${VERSION}" -m "Version ${VERSION}" && git push --follow-tags

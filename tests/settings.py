@@ -1,4 +1,6 @@
-SECRET_KEY = 'CANIHAZSECRET?'
+DEBUG = True
+
+SECRET_KEY = 'test'
 
 DATABASES = {
     'default': {
@@ -7,6 +9,8 @@ DATABASES = {
     }
 }
 
+MIDDLEWARE_CLASSES = []
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -14,3 +18,8 @@ INSTALLED_APPS = [
 
     'didadata',
 ]
+
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'APP_DIRS': True,
+}]

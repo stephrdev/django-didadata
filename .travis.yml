@@ -11,12 +11,12 @@ matrix:
       sudo: true
 
 install:
-  - pip install tox-travis
+  - pip install pipenv codecov
+  - pipenv install --dev
+  - pipenv run pip install -e .
+  - pipenv run pip install $DEPS
 
-script:
-  - tox
+script: pipenv run py.test --cov
 
 after_success:
-  - pip install coveralls coverage
-  - coverage report
-  - coveralls
+  - codecov
