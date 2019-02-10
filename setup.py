@@ -28,6 +28,7 @@ setup(
     install_requires=['Django>=1.8.19,<2.2'],
     include_package_data=True,
     keywords='django didadata',
+    license='BSD',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
