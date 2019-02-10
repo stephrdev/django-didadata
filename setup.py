@@ -15,7 +15,7 @@ with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='django-didadata',
     version=VERSION,
-    description='A Django app to collecto numeric data.',
+    description='A Django app to collect numeric data.',
     long_description=long_description,
     url='https://github.com/stephrdev/django-didadata/',
     project_urls={
