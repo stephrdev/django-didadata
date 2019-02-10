@@ -5,7 +5,6 @@
 .coverage
 .cache
 .pytest_cache
-didadata/settings.py
 htmlcov/
 dist/
 build/
