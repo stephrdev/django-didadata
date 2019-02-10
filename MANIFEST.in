@@ -6,6 +6,4 @@ include setup.cfg
 recursive-include didadata *.py
 recursive-include didadata/locale *
 recursive-exclude tests *
-recursive-exclude examples/ *
-recursive-exclude examples/example *
 recursive-exclude build/ *
