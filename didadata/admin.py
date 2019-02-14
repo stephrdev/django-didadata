@@ -10,6 +10,6 @@ class MetricAdmin(admin.ModelAdmin):
 
 @admin.register(Record)
 class RecordAdmin(admin.ModelAdmin):
-    list_display = ('metric_id', 'timestamp', 'value')
+    list_display = ('metric__name', 'timestamp', 'value')
     list_filter = ('metric',)
     date_hierarchy = 'timestamp'
