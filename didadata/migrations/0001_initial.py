@@ -13,10 +13,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Metric',
             fields=[
-                ('id', models.AutoField(
-                    primary_key=True, verbose_name='ID', auto_created=True, zserialize=False)),
-                ('name', models.CharField(
-                    unique=True, verbose_name='Metric name', max_length=40)),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
+                ('name', models.CharField(unique=True, verbose_name='Metric name', max_length=40)),
             ],
             options={
                 'verbose_name_plural': 'Metrics',
@@ -26,14 +24,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Record',
             fields=[
-                ('id', models.AutoField(
-                    primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
-                ('timestamp', models.DateTimeField(
-                    auto_now_add=True, db_index=True, verbose_name='Timestamp')),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
+                ('timestamp', models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Timestamp')),
                 ('value', models.FloatField(verbose_name='Value')),
-                ('metric', models.ForeignKey(
-                    verbose_name='Metric', to='didadata.Metric',
-                    on_delete=models.deletion.CASCADE)),
+                ('metric', models.ForeignKey(verbose_name='Metric', to='didadata.Metric', on_delete=models.deletion.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'Records',

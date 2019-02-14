@@ -15,7 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='record',
             name='timestamp',
-            field=models.DateTimeField(
-                db_index=True, default=timezone.now, editable=False, verbose_name='Timestamp'),
+            field=models.DateTimeField(db_index=True, default=timezone.now, editable=False, verbose_name='Timestamp'),
         ),
     ]

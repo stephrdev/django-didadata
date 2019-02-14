@@ -5,7 +5,6 @@ name = "pypi"
 
 [dev-packages]
 pytest = "*"
-pytest-flakes = "*"
 pytest-isort = "*"
 pytest-django = "*"
 pytest-cov = "*"
@@ -19,7 +18,7 @@ django = "*"
 djangorestframework = "*"
 django-filter = "*"
 django-didadata = {editable = true,path = "."}
-pytest-pycodestyle = "*"
+pytest-flake8 = "*"
 
 [requires]
 python_version = "3.6"
