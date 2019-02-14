@@ -15,6 +15,7 @@ cov: tests
 release:
 	@echo About to release ${VERSION}
 	@echo [ENTER] to continue; read
+	rm -fr docs/_build build/ dist/
 	pipenv run python setup.py sdist bdist_wheel
 	pipenv run twine upload dist/*
 	git tag -a "${VERSION}" -m "Version ${VERSION}" && git push --follow-tags
