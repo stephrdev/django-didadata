@@ -18,7 +18,7 @@ class TestRecordAdmin:
 
     def test_list_display(self, rf):
         modeladmin = RecordAdmin(Record, admin.site)
-        assert modeladmin.list_display == ('metric__name', 'timestamp', 'value')
+        assert modeladmin.list_display == ('metric', 'timestamp', 'value')
 
     def test_list_filter(self, rf):
         modeladmin = RecordAdmin(Record, admin.site)
