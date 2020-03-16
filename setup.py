@@ -25,7 +25,7 @@ setup(
     author='Stephan Jaekel, Benjamin Banduhn',
     author_email='steph@rdev.info',
     packages=find_packages(exclude=['tests', 'tests.*']),
-    install_requires=['Django>=1.8.19,<2.2'],
+    install_requires=['Django>=1.8.19,<2.3'],
     include_package_data=True,
     keywords='django didadata',
     license='BSD',
@@ -38,5 +38,6 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
 )

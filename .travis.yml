@@ -6,6 +6,7 @@ python:
   - "3.5"
   - "3.6"
   - "3.7"
+  - "3.8"
 
 env:
   global:
@@ -17,6 +18,7 @@ env:
     - DEPS="Django>=1.11,<1.12"
     - DEPS="Django>=2.0,<2.1"
     - DEPS="Django>=2.1,<2.2"
+    - DEPS="Django>=2.2,<2.3"
 
 install:
   - pip install pipenv codecov
