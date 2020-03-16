@@ -20,3 +20,7 @@ lines_after_imports = 2
 [*.rst]
 indent_style = space
 indent_size = 4
+
+[*.yml]
+indent_style = space
+indent_size = 2
