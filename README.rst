@@ -4,8 +4,8 @@ django-didadata
 .. image:: https://badge.fury.io/py/django-didadata.svg
     :target: https://badge.fury.io/py/django-didadata
 
-.. image:: https://codecov.io/gh/stephrdev/django-didadata/workflows/Testing/badge.svg?branch=master
-    :target: https://codecov.io/gh/stephrdev/django-didadata/actions?query=workflow%3ATesting
+.. image:: https://github.com/stephrdev/django-didadata/workflows/Testing/badge.svg?branch=master
+    :target: https://github.com/stephrdev/django-didadata/actions?query=workflow%3ATesting
 
 .. image:: https://codecov.io/gh/stephrdev/django-didadata/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/stephrdev/django-didadata
