@@ -12,6 +12,24 @@ with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 
+prod_require = [
+    'Django>=1.11,<2.3',
+    'djangorestframework>=3.11.0,<3.12',
+    'django-filter>=2.2.0,<2.3',
+]
+
+dev_require = [
+    'pytest',
+    'pytest-isort',
+    'pytest-django',
+    'pytest-cov',
+    'pytest-flake8',
+    'sphinx',
+    'sphinx-rtd-theme',
+    'factory-boy',
+]
+
+
 setup(
     name='django-didadata',
     version=VERSION,
@@ -25,7 +43,10 @@ setup(
     author='Stephan Jaekel, Benjamin Banduhn',
     author_email='steph@rdev.info',
     packages=find_packages(exclude=['tests', 'tests.*']),
-    install_requires=['Django>=1.8.19,<2.3'],
+    install_requires=[prod_require],
+    extras_require={
+        'dev': dev_require,
+    },
     include_package_data=True,
     keywords='django didadata',
     license='BSD',
