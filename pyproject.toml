@@ -1,0 +1,13 @@
+[tool.black]
+target-version = ['py35', 'py36', 'py37', 'py38']
+exclude = '(/migrations/)'
+
+[tool.isort]
+known_first_party = ['didadata']
+sections = ['FUTURE', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLDER']
+default_section = 'THIRDPARTY'
+skip_glob = ['**/migrations/**']
+line_length = 88
+use_parantheses = 'True'
+include_trailing_comma = 'True'
+multi_line_output = 3

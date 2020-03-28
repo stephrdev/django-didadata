@@ -5,8 +5,12 @@ VERSION = $(shell python -c "print(__import__('didadata').__version__)")
 clean:
 	rm -fr docs/_build build/ dist/
 
-tests:
-	py.test --cov
+format-python-code:
+	isort -rc .
+	black .
+
+tests: clean
+	py.test
 
 cov: tests
 	coverage html
