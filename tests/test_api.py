@@ -12,7 +12,6 @@ from .factories.metrics import MetricFactory
 
 @pytest.mark.django_db
 class TestRecordApi:
-
     def test_invalid_metric(self):
         with pytest.raises(MetricNotFoundException):
             api.record('my-metric', 0)

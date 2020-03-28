@@ -7,7 +7,6 @@ from didadata.models import Metric, Record
 
 @pytest.mark.django_db
 class TestMetricAdmin:
-
     def test_list_display(self, rf):
         modeladmin = MetricAdmin(Metric, admin.site)
         assert modeladmin.list_display == ('name',)
@@ -15,7 +14,6 @@ class TestMetricAdmin:
 
 @pytest.mark.django_db
 class TestRecordAdmin:
-
     def test_list_display(self, rf):
         modeladmin = RecordAdmin(Record, admin.site)
         assert modeladmin.list_display == ('metric', 'timestamp', 'value')

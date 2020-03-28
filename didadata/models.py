@@ -16,9 +16,11 @@ class Metric(models.Model):
 
 class Record(models.Model):
     metric = models.ForeignKey(
-        Metric, verbose_name=_('Metric'), on_delete=models.deletion.CASCADE)
+        Metric, verbose_name=_('Metric'), on_delete=models.deletion.CASCADE
+    )
     timestamp = models.DateTimeField(
-        _('Timestamp'), db_index=True, default=timezone.now, editable=False)
+        _('Timestamp'), db_index=True, default=timezone.now, editable=False
+    )
     value = models.FloatField(_('Value'))
 
     class Meta:

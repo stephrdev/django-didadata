@@ -7,7 +7,6 @@ from .models import Record
 
 
 class IsoDateTimeRangeField(RangeField):
-
     def __init__(self, *args, **kwargs):
         fields = (IsoDateTimeField(), IsoDateTimeField())
         super().__init__(fields, *args, **kwargs)

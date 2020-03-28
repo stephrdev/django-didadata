@@ -20,6 +20,7 @@ prod_require = [
 
 dev_require = [
     'pytest',
+    'pytest-black',
     'pytest-isort',
     'pytest-django',
     'pytest-cov',
@@ -44,9 +45,7 @@ setup(
     author_email='steph@rdev.info',
     packages=find_packages(exclude=['tests', 'tests.*']),
     install_requires=[prod_require],
-    extras_require={
-        'dev': dev_require,
-    },
+    extras_require={'dev': dev_require,},
     include_package_data=True,
     keywords='django didadata',
     license='BSD',

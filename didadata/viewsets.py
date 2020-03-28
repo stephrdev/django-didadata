@@ -11,18 +11,14 @@ class MetricViewSet(
     mixins.CreateModelMixin,
     mixins.RetrieveModelMixin,
     mixins.ListModelMixin,
-    viewsets.GenericViewSet
+    viewsets.GenericViewSet,
 ):
     queryset = Metric.objects.all()
     serializer_class = MetricSerializer
     permission_classes = (permissions.DjangoModelPermissions,)
 
 
-class RecordViewSet(
-    mixins.CreateModelMixin,
-    mixins.ListModelMixin,
-    viewsets.GenericViewSet
-):
+class RecordViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
     queryset = Record.objects.all()
     permission_classes = (permissions.DjangoModelPermissions,)
     filter_backends = (DjangoFilterBackend,)
