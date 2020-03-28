@@ -4,6 +4,6 @@ from .viewsets import MetricViewSet, RecordViewSet
 
 
 router = DefaultRouter()
-router.register(r"metrics", MetricViewSet)
-router.register(r"records", RecordViewSet)
+router.register(r'metrics', MetricViewSet)
+router.register(r'records', RecordViewSet)
 urlpatterns = router.urls
