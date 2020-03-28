@@ -4,23 +4,22 @@ from .models import Metric, Record
 
 
 class MetricSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Metric
-        fields = '__all__'
+        fields = "__all__"
 
 
 class MinimalRecordSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Record
-        fields = ('timestamp', 'value')
+        fields = ("timestamp", "value")
 
 
 class RecordSerializer(serializers.ModelSerializer):
     metric = serializers.SlugRelatedField(
-        queryset=Metric.objects.all(), slug_field='name')
+        queryset=Metric.objects.all(), slug_field="name"
+    )
 
     class Meta:
         model = Record
-        fields = ('metric', 'timestamp', 'value')
+        fields = ("metric", "timestamp", "value")

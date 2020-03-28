@@ -4,7 +4,7 @@ from didadata.models import Metric, Record
 
 
 class MetricFactory(factory.DjangoModelFactory):
-    name = factory.Sequence(lambda i: 'metric-{0}'.format(i))
+    name = factory.Sequence(lambda i: "metric-{0}".format(i))
 
     class Meta:
         model = Metric

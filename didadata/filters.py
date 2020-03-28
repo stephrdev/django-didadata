@@ -7,7 +7,6 @@ from .models import Record
 
 
 class IsoDateTimeRangeField(RangeField):
-
     def __init__(self, *args, **kwargs):
         fields = (IsoDateTimeField(), IsoDateTimeField())
         super().__init__(fields, *args, **kwargs)
@@ -28,22 +27,22 @@ class MultipleCharFilter(django_filters.CharFilter):
     field_class = forms.CharField
 
     def filter(self, qs, value):
-        value = value or ''
+        value = value or ""
 
         if not value:
             return qs
 
         q = Q()
-        for v in set(value.split(',')):
+        for v in set(value.split(",")):
             q |= Q(**{self.field_name: v})
 
         return self.get_method(qs)(q)
 
 
 class RecordFilter(django_filters.FilterSet):
-    metric = MultipleCharFilter(field_name='metric__name')
+    metric = MultipleCharFilter(field_name="metric__name")
     timestamp = IsoDateTimeRangeFilter()
 
     class Meta:
         model = Record
-        fields = ('metric', 'timestamp')
+        fields = ("metric", "timestamp")

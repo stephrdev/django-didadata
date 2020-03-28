@@ -11,7 +11,7 @@ class MetricViewSet(
     mixins.CreateModelMixin,
     mixins.RetrieveModelMixin,
     mixins.ListModelMixin,
-    viewsets.GenericViewSet
+    viewsets.GenericViewSet,
 ):
     queryset = Metric.objects.all()
     serializer_class = MetricSerializer
@@ -19,9 +19,7 @@ class MetricViewSet(
 
 
 class RecordViewSet(
-    mixins.CreateModelMixin,
-    mixins.ListModelMixin,
-    viewsets.GenericViewSet
+    mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet
 ):
     queryset = Record.objects.all()
     permission_classes = (permissions.DjangoModelPermissions,)
@@ -31,17 +29,17 @@ class RecordViewSet(
     def get_queryset(self):
         qset = super().get_queryset()
 
-        if 'minimal' in self.request.query_params:
+        if "minimal" in self.request.query_params:
             # Minimal response doesn't include metric name, no select_related
             # needed.
             return qset
 
-        return qset.select_related('metric')
+        return qset.select_related("metric")
 
     def get_serializer_class(self):
         # Use reduced serializer (no metric name per record) if we filter based
         # on a metric.
-        if 'minimal' in self.request.query_params:
+        if "minimal" in self.request.query_params:
             return MinimalRecordSerializer
 
         return RecordSerializer
