@@ -13,4 +13,4 @@ INSTALLED_APPS = [
     'didadata',
 ]
 
-TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates', 'APP_DIRS': True,}]
+TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates', 'APP_DIRS': True}]
