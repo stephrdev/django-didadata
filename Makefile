@@ -1,4 +1,4 @@
-.PHONY: clean tests cov release-tag
+.PHONY: clean format-python-code tests cov release-tag
 
 VERSION = $(shell python -c "print(__import__('didadata').__version__)")
 
@@ -9,7 +9,7 @@ format-python-code:
 	isort -rc .
 	black -q .
 
-tests: clean
+tests:
 	py.test
 
 cov: tests
