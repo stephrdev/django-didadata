@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.4.0 - 2020-03-30
+------------------
+
+* add django 2.2.x support
+* add python 3.8.x support
+* improve tests: switch from travis to github actions
+* add workflow to push package to pypi easily
+
+
 0.3.3 - 2019-02-14
 ------------------
 
