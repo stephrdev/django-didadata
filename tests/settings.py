@@ -2,7 +2,12 @@ DEBUG = True
 
 SECRET_KEY = 'test'
 
-DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': ':memory:',}}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
+    }
+}
 
 MIDDLEWARE_CLASSES = []
 

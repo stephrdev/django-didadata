@@ -3,7 +3,6 @@ from codecs import open
 
 from setuptools import find_packages, setup
 
-
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 VERSION = __import__('didadata').__version__
 
