@@ -13,9 +13,9 @@ with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
 
 
 prod_require = [
-    'Django>=2.2,<3.2',
-    'djangorestframework>=3.12.1,<3.13',
-    'django-filter>=2.4.0,<2.5',
+    'Django>=2.2',
+    'djangorestframework>=3.12.1',
+    'django-filter>=2.4.0',
 ]
 
 dev_require = [
