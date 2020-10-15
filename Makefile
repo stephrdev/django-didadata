@@ -6,7 +6,7 @@ clean:
 	rm -fr docs/_build build/ dist/
 
 format-python-code:
-	isort -rc .
+	isort .
 	black -q .
 
 tests:
