@@ -1,6 +1,17 @@
 Changelog
 =========
 
+0.5.0 - 2020-10-15
+------------------
+
+* add django 3.0.x support
+* add django 3.1.x support
+* add python 3.9.x support
+* drop django 1.11.x support
+* drop django 2.0.x support
+* drop django 2.1.x support
+* drop python 3.6.x support
+
 0.4.0 - 2020-03-30
 ------------------
 
