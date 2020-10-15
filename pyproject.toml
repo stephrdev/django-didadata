@@ -1,5 +1,30 @@
+[tool.pytest.ini_options]
+minversion = 6.0
+addopts = "-vs --tb=short --black --isort --flake8  --nomigrations"
+
+testpaths = [
+	"didadata/",
+	"tests/",
+]
+
+python_files = [
+	"test_*.py",
+]
+
+flake8-max-line-length = 96
+
+flake8-ignore = [
+	"**/__init__.py F401,F403",
+	"**/apps.py F401",
+	"*settings.py F401 F403 F405",
+	"*migrations/*.py ALL",
+	"*.py E128 E231",
+]
+
+DJANGO_SETTINGS_MODULE = "tests.settings"
+
 [tool.black]
-target-version = ['py35', 'py36', 'py37', 'py38']
+target-version = ['py36', 'py37', 'py38']
 exclude = '(/migrations/)'
 line-length = 96
 skip-string-normalization = true
@@ -14,3 +39,22 @@ line_length = 96
 use_parentheses = true
 include_trailing_comma = true
 multi_line_output = 3
+lines_after_imports = 2
+
+[tool.coverage.run]
+branch = true
+include = [
+	"./*",
+]
+
+omit = [
+	"tests/*",
+	"*/__init__.py",
+	"*migrations*",
+	"*setup.py",
+]
+
+[rool.coverage.report]
+exclude_lines = [
+	"raise NotImplementedError",
+]
