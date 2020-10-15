@@ -10,7 +10,7 @@ Changelog
 * drop django 1.11.x support
 * drop django 2.0.x support
 * drop django 2.1.x support
-* drop python 3.6.x support
+* drop python 3.5.x support
 
 0.4.0 - 2020-03-30
 ------------------
